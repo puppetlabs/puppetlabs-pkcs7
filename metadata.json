@@ -1,0 +1,14 @@
+  
+{
+  "name": "puppetlabs-pkcs7",
+  "version": "0.1.0",
+  "author": "puppetlabs",
+  "summary": "Bolt plugin to encrypt and decrypt sensitive data",
+  "license": "Apache-2.0",
+  "source": "git://github.com/puppetlabs/puppetlabs-pkcs7.git",
+  "project_page": "https://github.com/puppetlabs/puppetlabs-pkcs7",
+  "issues_url": "https://github.com/puppetlabs/puppetlabs-pkcs7/issues",
+  "dependencies": [
+    {"name":"puppetlabs-ruby_task_helper","version_requirement":">= 0.4.0"}
+  ]
+}
