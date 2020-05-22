@@ -1,9 +1,17 @@
-## Development
+## Release 0.1.1
 
-- Fixed a bug in `pkcs7::secret_createkeys` where an exception was thrown with an error: `uninitialized constant PKCS7CreateKeys::FileUtils`
+### Bug fixes
+
+* **Fix uninitialized constant PKCS7CreateKeys::FileUtils error**
+
+  Fixed a bug in `pkcs7::secret_createkeys` where an exception was thrown with an error: `uninitialized constant PKCS7CreateKeys::FileUtils`
 
   Contributed by Nick Maludy (@nmaludy)
   
+* **Fix shebang in tasks**
+  
+  The interpreter for tasks had a space in fron the prevented the correct interpreter from being
+  declared
 
 ## Release 0.1.0
 
