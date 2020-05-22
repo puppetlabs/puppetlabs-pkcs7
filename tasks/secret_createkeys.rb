@@ -3,6 +3,7 @@
 
 require 'openssl'
 require 'base64'
+require 'fileutils'
 
 require_relative "../../ruby_task_helper/files/task_helper.rb"
 
