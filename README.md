@@ -46,12 +46,23 @@ The `pkcs7::secret_encrypt` task encrypts a sensitive value and returns an encry
 
 ## Configuration
 
-The `pkcs7` plugin can be configured in a `bolt.yaml` file. The following values can be configured
-and apply to each plugin that uses the value:
+The `pkcs7` plugin can be configured in a `bolt-project.yaml` or `bolt-defaults.yaml` file. **This
+configuration applies to using the plugin configuration and inventory, and to running 'bolt secret'
+commands on the command line**. The following values can be configured and apply to each plugin that
+uses the value:
 
 - `keysize`
 - `private_key`
 - `public_key`
+
+```yaml
+---
+plugins:
+  pkcs7:
+    keysize: 4096
+    private_key: ./nothing_to_see_here/private.pkcs7.pem
+    public_key: ./nothing_to_see_here/public.pkcs7.pem
+```
 
 ## Usage
 
@@ -75,26 +86,54 @@ targets:
 The `pkcs7` plugins can be used directly from the Bolt CLI using the `bolt secret` commands. This module
 is bundled with Bolt and is the default plugin used by the `bolt secret` commands.
 
+**NOTE**: You must configure the `keysize`, `public_key`, and `private_key` parameters in your
+`bolt-project.yaml` or `bolt-defaults.yaml` as shown above. Only the `--force` parameter can be
+passed on the command line.
+
 ### Creating keys
 
 To create keys for a Bolt project, run the following command:
 
+_\*nix shell command_
+
 ```bash
 $ bolt secret createkeys [options]
+```
+
+_PowerShell cmdlet_
+
+```
+New-BoltSecretKey [options]
 ```
 
 ### Decrypting a value
 
 To decrypt an encrypted value, run the following command:
 
+_\*nix shell command_
+
 ```bash
 $ bolt secret decrypt <encrypted_value> [options]
+```
+
+_PowerShell cmdlet_
+
+```
+Unprotect-BoltSecret -Text <encrypted_value> [options]
 ```
 
 ### Encrypting a value
 
 To encrypt plaintext, run the following command:
 
+_\*nix shell command_
+
 ```bash
 $ bolt secret encrypt <plaintext_value> [options]
+```
+
+_PowerShell cmdlet_
+
+```
+Protect-BoltSecret -Text <plaintext_value> [options]
 ```
