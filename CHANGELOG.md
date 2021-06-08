@@ -1,3 +1,11 @@
+## Release 0.1.2
+
+### Bug fixes
+
+* **Update secret_decrypt plugin description from 'encrypt' to 'decrypt'**
+  
+  Fixes a typo in the secret_decrypt plugin description.
+
 ## Release 0.1.1
 
 ### Bug fixes

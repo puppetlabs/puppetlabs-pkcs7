@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.5
   Exclude:
     - 'Boltdir/**/*'
@@ -8,6 +9,7 @@ AllCops:
     - 'modules/**/*'
     - 'docs/**/*'
     - 'site-modules/**/*'
+    - 'Gemfile'
 
 # Checks for if and unless statements that would fit on one line if written as a
 # modifier if/unless.
@@ -39,6 +41,12 @@ Style/NumericLiterals:
   Enabled: false
 
 Style/NumericPredicate:
+  Enabled: false
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: false
+
+Style/RedundantRegexpEscape:
   Enabled: false
 
 Style/StderrPuts:
