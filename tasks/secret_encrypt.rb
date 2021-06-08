@@ -14,7 +14,7 @@ class PKCS7Encrypt < TaskHelper
     debug("Using public key: #{public_key_path}")
 
     # Initialize the cipher
-    cipher = OpenSSL::Cipher::AES.new(256, :CBC)
+    cipher = OpenSSL::Cipher.new('aes-256-cbc')
 
     # Encrypt plaintext
     raw = OpenSSL::PKCS7.encrypt([public_key], opts[:plaintext_value], cipher, OpenSSL::PKCS7::BINARY).to_der
