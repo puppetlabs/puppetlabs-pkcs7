@@ -1,3 +1,9 @@
+## Release 0.1.3
+
+### Bug fixes
+
+* **Add PDK gem dependency for release**
+
 ## Release 0.1.2
 
 ### Bug fixes
