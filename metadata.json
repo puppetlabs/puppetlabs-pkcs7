@@ -1,4 +1,3 @@
-  
 {
   "name": "puppetlabs-pkcs7",
   "version": "0.1.2",
@@ -9,6 +8,18 @@
   "project_page": "https://github.com/puppetlabs/puppetlabs-pkcs7",
   "issues_url": "https://github.com/puppetlabs/puppetlabs-pkcs7/issues",
   "dependencies": [
-    {"name":"puppetlabs-ruby_task_helper","version_requirement":">= 0.4.0"}
-  ]
+    {
+      "name": "puppetlabs-ruby_task_helper",
+      "version_requirement": ">= 0.4.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 8.0.0 < 10.0.0"
+    }
+  ],
+  "pdk-version": "3.6.1",
+  "template-url": "https://github.com/puppetlabs/pdk-templates.git#main",
+  "template-ref": "heads/main-0-gb7f9e32"
 }
