@@ -2,7 +2,6 @@
 
 require 'tmpdir'
 require 'spec_helper'
-require_relative '../fixtures/modules/ruby_task_helper/files/task_helper'
 require_relative '../../tasks/secret_createkeys'
 
 describe PKCS7CreateKeys do
