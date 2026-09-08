@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require_relative '../fixtures/modules/ruby_task_helper/files/task_helper'
 require_relative '../../tasks/secret_encrypt'
 
 describe PKCS7Encrypt do
@@ -16,12 +17,12 @@ describe PKCS7Encrypt do
   end
 
   it 'encrypts a value' do
-    expect(subject.task(opts)[:value]).to start_with('ENC[PKCS7,')
+    expect(subject.task(**opts)[:value]).to start_with('ENC[PKCS7,')
   end
 
   it 'returns an error if one is raised' do
     error = TaskHelper::Error.new('something went wrong', 'bolt.test/error')
     allow(subject).to receive(:encrypt).and_raise(error)
-    expect { subject.task({}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
+    expect { subject.task(**{}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
   end
 end

@@ -2,6 +2,7 @@
 
 require 'tmpdir'
 
+require_relative '../fixtures/modules/ruby_task_helper/files/task_helper'
 require_relative '../../tasks/secret_encrypt'
 require_relative '../../tasks/secret_decrypt'
 require_relative '../../tasks/secret_createkeys'

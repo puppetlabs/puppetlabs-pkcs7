@@ -2,6 +2,7 @@
 
 require 'tmpdir'
 require 'spec_helper'
+require_relative '../fixtures/modules/ruby_task_helper/files/task_helper'
 require_relative '../../tasks/secret_createkeys'
 
 describe PKCS7CreateKeys do
@@ -26,7 +27,7 @@ describe PKCS7CreateKeys do
   end
 
   it 'creates keys' do
-    result = subject.task(opts)
+    result = subject.task(**opts)
 
     expect(result[:value]).to contain_exactly(public_key, private_key)
     expect(File.exist?(private_key)).to be(true)
@@ -35,17 +36,17 @@ describe PKCS7CreateKeys do
   end
 
   it 'errors when attempting to overwrite keys' do
-    subject.task(opts)
-    expect { subject.task(opts) }.to raise_error(TaskHelper::Error, %r{Found existing key pair})
+    subject.task(**opts)
+    expect { subject.task(**opts) }.to raise_error(TaskHelper::Error, %r{Found existing key pair})
   end
 
   it 'overwrites keys with force set' do
-    subject.task(opts)
+    subject.task(**opts)
     original_private_key = File.read(private_key)
     original_public_key  = File.read(public_key)
 
     opts[:force] = true
-    result = subject.task(opts)
+    result = subject.task(**opts)
 
     expect(result[:value]).to contain_exactly(public_key, private_key)
     expect(File.read(private_key)).not_to eq(original_private_key)
@@ -56,6 +57,6 @@ describe PKCS7CreateKeys do
     error = TaskHelper::Error.new('something went wrong', 'bolt.test/error')
     allow(subject).to receive(:createkeys).and_raise(error)
 
-    expect { subject.task({}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
+    expect { subject.task(**{}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
   end
 end

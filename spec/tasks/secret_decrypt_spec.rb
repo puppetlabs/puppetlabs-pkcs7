@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require_relative '../fixtures/modules/ruby_task_helper/files/task_helper'
 require_relative '../../tasks/secret_decrypt'
 
 describe PKCS7Decrypt do
@@ -23,6 +24,6 @@ describe PKCS7Decrypt do
   it 'returns an error if one is raised' do
     error = TaskHelper::Error.new('something went wrong', 'bolt.test/error')
     allow(subject).to receive(:decrypt).and_raise(error)
-    expect { subject.task({}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
+    expect { subject.task(**{}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
   end
 end

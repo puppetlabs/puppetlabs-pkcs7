@@ -4,7 +4,7 @@
 require 'openssl'
 require 'base64'
 
-require_relative '../../ruby_task_helper/files/task_helper'
+require_relative '../../ruby_task_helper/files/task_helper' unless Object.const_defined?(:TaskHelper)
 
 class PKCS7Decrypt < TaskHelper
   def decrypt(opts)
