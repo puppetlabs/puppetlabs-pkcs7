@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require_relative '../../tasks/secret_decrypt.rb'
+require_relative '../../tasks/secret_decrypt'
 
 describe PKCS7Decrypt do
   let(:boltdir)         { File.expand_path(__dir__) }
@@ -11,10 +11,10 @@ describe PKCS7Decrypt do
 
   it 'decrypts a value' do
     result = subject.task(
-      _boltdir:        boltdir,
+      _boltdir: boltdir,
       encrypted_value: encrypted_value,
-      private_key:     private_key,
-      public_key:      public_key
+      private_key: private_key,
+      public_key: public_key,
     )
 
     expect(result[:value]).to eq('hello world')
@@ -23,6 +23,6 @@ describe PKCS7Decrypt do
   it 'returns an error if one is raised' do
     error = TaskHelper::Error.new('something went wrong', 'bolt.test/error')
     allow(subject).to receive(:decrypt).and_raise(error)
-    expect { subject.task({}) }.to raise_error(TaskHelper::Error, /something went wrong/)
+    expect { subject.task({}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
   end
 end

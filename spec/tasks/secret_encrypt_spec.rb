@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require_relative '../../tasks/secret_encrypt.rb'
+require_relative '../../tasks/secret_encrypt'
 
 describe PKCS7Encrypt do
   let(:boltdir)         { File.expand_path(__dir__) }
@@ -9,9 +9,9 @@ describe PKCS7Encrypt do
 
   let(:opts) do
     {
-      _boltdir:        boltdir,
+      _boltdir: boltdir,
       plaintext_value: 'hello world',
-      public_key:      public_key
+      public_key: public_key,
     }
   end
 
@@ -22,6 +22,6 @@ describe PKCS7Encrypt do
   it 'returns an error if one is raised' do
     error = TaskHelper::Error.new('something went wrong', 'bolt.test/error')
     allow(subject).to receive(:encrypt).and_raise(error)
-    expect { subject.task({}) }.to raise_error(TaskHelper::Error, /something went wrong/)
+    expect { subject.task({}) }.to raise_error(TaskHelper::Error, %r{something went wrong})
   end
 end

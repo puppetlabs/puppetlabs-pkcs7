@@ -4,7 +4,7 @@
 require 'openssl'
 require 'base64'
 
-require_relative "../../ruby_task_helper/files/task_helper.rb"
+require_relative '../../ruby_task_helper/files/task_helper'
 
 class PKCS7Encrypt < TaskHelper
   def encrypt(opts)
@@ -28,6 +28,4 @@ class PKCS7Encrypt < TaskHelper
   end
 end
 
-if $PROGRAM_NAME == __FILE__
-  PKCS7Encrypt.run
-end
+PKCS7Encrypt.run if $PROGRAM_NAME == __FILE__
