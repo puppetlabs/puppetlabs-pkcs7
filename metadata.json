@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-pkcs7",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "puppetlabs",
   "summary": "Bolt plugin to encrypt and decrypt sensitive data",
   "license": "Apache-2.0",
