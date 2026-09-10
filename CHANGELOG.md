@@ -1,3 +1,11 @@
+## Release 1.0.0
+
+### Changes
+
+* **Support Puppet 9**
+
+  Widened the `puppet` requirement to `>= 8.0.0 < 10.0.0` and updated the supported OS matrix to RHEL 9, Debian 12, and Windows Server 2022, as part of the Bolt 193 migration to Puppet 9 / Ruby 4.
+
 ## Release 0.1.2
 
 ### Bug fixes
