@@ -9,26 +9,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 [Full Changelog](https://github.com/puppetlabs/puppetlabs-pkcs7/compare/0.1.2...v1.0.0)
 
-### Changed
 
-- (BOLT-193): pkcs7 pdk update to puppet 9 [#15](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/15) ([gavindidrichsen](https://github.com/gavindidrichsen))
+## [v0.1.2]()
 
-### Other
+### Bug fixes
 
-- CHANGELOG update [#16](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/16) ([gavindidrichsen](https://github.com/gavindidrichsen))
-- Tag with just version, not "v<Version>" format [#13](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/13) ([lucywyman](https://github.com/lucywyman))
-- (maint) Add release workflow [#12](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/12) ([beechtom](https://github.com/beechtom))
+* **Update secret_decrypt plugin description from 'encrypt' to 'decrypt'**
+  
+  Fixes a typo in the secret_decrypt plugin description.
 
-## [0.1.2](https://github.com/puppetlabs/puppetlabs-pkcs7/tree/0.1.2) - 2021-06-08
+## Release 0.1.1
 
-[Full Changelog](https://github.com/puppetlabs/puppetlabs-pkcs7/compare/0.1.1...0.1.2)
+### Bug fixes
 
-### Other
+* **Fix uninitialized constant PKCS7CreateKeys::FileUtils error**
 
-- Fix typo in secret_decrypt description [#10](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/10) ([lucywyman](https://github.com/lucywyman))
-- (maint) Add code of conduct and contributing docs [#9](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/9) ([beechtom](https://github.com/beechtom))
-- (maint) Clarify CLI usage in the README [#8](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/8) ([lucywyman](https://github.com/lucywyman))
+  Fixed a bug in `pkcs7::secret_createkeys` where an exception was thrown with an error: `uninitialized constant PKCS7CreateKeys::FileUtils`
 
-## [0.1.1](https://github.com/puppetlabs/puppetlabs-pkcs7/tree/0.1.1) - 2020-06-18
+  Contributed by Nick Maludy (@nmaludy)
+  
+* **Fix shebang in tasks**
+  
+  The interpreter for tasks had a space in fron the prevented the correct interpreter from being
+  declared
 
-[Full Changelog](https://github.com/puppetlabs/puppetlabs-pkcs7/compare/fe7359dfbecae4de55effe15f7f82293e156d5b7...0.1.1)
+## Release 0.1.0
+
+This is the initial release.
