@@ -1,6 +1,6 @@
 {
   "name": "puppetlabs-pkcs7",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "author": "puppetlabs",
   "summary": "Bolt plugin to encrypt and decrypt sensitive data",
   "license": "Apache-2.0",
@@ -61,7 +61,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 8.0.0 < 10.0.0"
+      "version_requirement": ">= 4.10.0 < 10.0.0"
     }
   ],
   "pdk-version": "3.6.1",
