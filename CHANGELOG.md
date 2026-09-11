@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [v1.0.0](https://github.com/puppetlabs/puppetlabs-pkcs7/tree/v1.0.0) - 2026-09-10
+## [v0.2.0](https://github.com/puppetlabs/puppetlabs-pkcs7/tree/v0.2.0) - 2026-09-11
 
-[Full Changelog](https://github.com/puppetlabs/puppetlabs-pkcs7/compare/0.1.2...v1.0.0)
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-pkcs7/compare/0.1.2...v0.2.0)
 
-Release notes prior to v1.0.0 have been moved to [ARCHIVE.md](ARCHIVE.md).
+### Changed
+
+- Revert version bump from major to minor (1.0.0 -> 0.2.0) [#19](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/19) ([gavindidrichsen](https://github.com/gavindidrichsen))
+- (BOLT-193): pkcs7 pdk update to puppet 9 [#15](https://github.com/puppetlabs/puppetlabs-pkcs7/pull/15) ([gavindidrichsen](https://github.com/gavindidrichsen))
+
+Release notes prior to v0.2.0 have been moved to [ARCHIVE.md](ARCHIVE.md).
